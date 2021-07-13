@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from './user';
+import { User } from './User';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
