@@ -34,6 +34,7 @@
   </form>
   <button  class="btn btn-lg btn-primary login" type="submit"
            (click)="login(username.value,password.value)">Sign in</button>
+  <div  *ngIf= "error" class="alert alert-danger" role="alert">account error,please check the password or username </div>
 
 </div> <!-- /container -->
 

@@ -42,8 +42,16 @@ body {
 }
 
 .login {
-  left:390px;
+  left:490px;
   position: relative;
   width: 150px;
+
+}
+
+.alert-danger {
+  width: 370px;
+  left:389px;
+  top: 20px;
+  position: relative;
 
 }

@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { Auth } from './Auth';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
+import { ApiResponse } from "./apiResponse";
 
 
 @Injectable({
@@ -14,11 +15,10 @@ import { throwError } from 'rxjs';
 export class AuthService {
   loginurl = 'http://localhost:8083/user/login';
   constructor(private http: HttpClient) { }
-  authUser(auth: Auth): Observable<Auth> {
-    return this.http.post<Auth>(this.loginurl, auth).pipe(
+  authUser(auth: Auth): Observable<ApiResponse> {
+    return this.http.post<ApiResponse>(this.loginurl, auth).pipe(
       catchError(this.handleError) // then handle the error
     );
-
   }
 
   private handleError(error: HttpErrorResponse) {
