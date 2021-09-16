@@ -11,7 +11,7 @@ export class RbboardComponent implements OnInit {
 
  constructor(private userService: UserService) { }
 
-  //testd
+  //
   users:any;
   host:any = "http://localhost:8080/getUd";
   ngOnInit(): void {
