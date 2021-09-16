@@ -1,9 +1,7 @@
 export interface User {
-  openid: string;
   name: string;
-  link: string;
-  isNew:boolean;
-  count:string;
-  shop:string
-
+  openid: string;
+  mobile: string;
+  uploadCount:boolean;
+  status:string;
 }
