@@ -11,7 +11,7 @@ export class RbboardComponent implements OnInit {
 
  constructor(private userService: UserService) { }
 
- // users: User[];
+
   users:any;
   ngOnInit(): void {
 
