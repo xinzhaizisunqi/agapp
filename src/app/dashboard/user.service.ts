@@ -18,12 +18,11 @@ heroesUrl = 'http://localhost:8083/getUd';  // URL to web api
   }
 
     /* GET heroes whose name contains search term */
-    searchHeroes(term: string): Observable<ApiResponse> {
+    searchHeroes(term: string,host: string): Observable<ApiResponse> {
       term = term.trim();
-
       // Add safe, URL encoded search parameter if there is a search term
       const options = term ?
-       { params: new HttpParams().set('host', "http://localhost:8080/getUd").set('mobile', "15142382575") } : {};
+       { params: new HttpParams().set('host', host).set('mobile', term) } : {};
 
       return this.http.get<ApiResponse>(this.heroesUrl, options)
         .pipe(

@@ -13,6 +13,7 @@ export class RbboardComponent implements OnInit {
 
   //testd
   users:any;
+  host:any = "http://localhost:8080/getUd";
   ngOnInit(): void {
 
   }
@@ -20,7 +21,7 @@ export class RbboardComponent implements OnInit {
   search(searchTerm: string) {
     if (searchTerm) {
       this.userService
-        .searchHeroes(searchTerm)
+        .searchHeroes(searchTerm,this.host)
         .subscribe(result => {
                 this.users = result.data;
         });
