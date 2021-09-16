@@ -61,11 +61,14 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h2 class="sub-header">列表</h2>
-      <label for="mobile">电话: </label>
-      <input type="text" #mobile id="mobile">
-      <button (click)="search(mobile.value)">
-        Search
-      </button>
+      <div style = "float:right;margin-top:-47px;margin-left:-235px">
+        <label for="mobile">电话: </label>
+        <input type="text" #mobile id="mobile">
+        <button (click)="search(mobile.value)">
+            Search
+         </button>
+      </div>
+   
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
