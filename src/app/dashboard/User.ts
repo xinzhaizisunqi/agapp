@@ -4,4 +4,5 @@ export interface User {
   mobile: string;
   uploadCount:boolean;
   status:string;
+  host: string
 }

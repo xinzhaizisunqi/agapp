@@ -14,7 +14,6 @@
 
   <title>Dashboard Template for Bootstrap</title>
 
-
   <!-- Custom styles for this template -->
   <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.10/examples/dashboard/dashboard.css" rel="stylesheet">
 
@@ -68,7 +67,7 @@
             Search
          </button>
       </div>
-   
+      
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
@@ -88,7 +87,10 @@
             <td>{{user.mobile}}</td>
             <td>{{user.uploadCount}}</td>
             <td>{{user.status}}</td>
-            <td><button style = "margin-left: -57px;margin-right: 5px;">通过</button><button style = "margin-left: 0px; margin-right: 6px;">拒绝</button><button style="margin-right: -56px">删除</button></td>
+            <td>
+              <button style = "margin-left: -57px;margin-right: 5px;" (click)="pass(user.openid)">通过</button>
+              <button style = "margin-left: 0px; margin-right: 6px;" (click)="fail(user.openid)">拒绝</button>
+              <button style="margin-right: -56px" (click)="delete(user.openid)">删除</button></td>
           </tr>
           </tbody>
         </table>

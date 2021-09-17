@@ -4,13 +4,12 @@ import { HttpHeaders } from '@angular/common/http';
 import { User } from './User';
 import { Observable } from 'rxjs';
 import { ApiResponse } from "./apiresponse";
+import { api } from './host-api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-heroesUrl = 'http://localhost:8083/getUd';  // URL to web api
 
 
   constructor(
@@ -24,8 +23,26 @@ heroesUrl = 'http://localhost:8083/getUd';  // URL to web api
       const options = term ?
        { params: new HttpParams().set('host', host).set('mobile', term) } : {};
 
-      return this.http.get<ApiResponse>(this.heroesUrl, options)
+      return this.http.get<ApiResponse>(api.getuser, options)
         .pipe(
         );
+    }
+
+
+    pass(user: User): Observable<ApiResponse> {
+      return this.http.post<ApiResponse>(api.check, user).pipe(
+      );
+    }
+
+
+    fail(user: User): Observable<ApiResponse> {
+      return this.http.post<ApiResponse>(api.check, user).pipe(
+      );
+    }
+
+    
+    delete(user: User): Observable<ApiResponse> {
+      return this.http.post<ApiResponse>(api.delete, user).pipe(
+      );
     }
 }
