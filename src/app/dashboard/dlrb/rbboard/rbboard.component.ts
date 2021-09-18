@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../User';
 import { UserService } from '../../user.service';
 import { api } from '../../host-api';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-rbboard',
@@ -38,7 +39,14 @@ export class RbboardComponent implements OnInit {
     this.userService.pass(user)
       .subscribe(result => {
         if (result.code == 0) {
-          alert("审核通过");
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '小票审核已通过',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.search('1');
         }
       });
   }
@@ -50,8 +58,15 @@ export class RbboardComponent implements OnInit {
     this.userService.fail(user)
       .subscribe(result => {
         if (result.code == 0) {
-          alert("审核失败");
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '小票审核已失败',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
+        this.search('1');
       });
   }
 
@@ -63,7 +78,13 @@ export class RbboardComponent implements OnInit {
     this.userService.delete(user)
       .subscribe(result => {
         if (result.code == 0) {
-          alert("删除成功");
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '删除用户信息成功',
+            showConfirmButton: false,
+            timer: 1500
+          })
         }
       });
   }

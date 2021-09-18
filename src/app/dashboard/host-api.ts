@@ -3,11 +3,11 @@ export const api = {
 
  
 
-    getuser:"http://114.115.138.42:30004/getUd",
+    getuser:"http://localhost:8083/getUd",
     
-    check:"http://114.115.138.42:30004/check",
+    check:"http://localhost:8083/check",
 
-    delete:"http://114.115.138.42:30004/delete",
+    delete:"http://localhost:8083/delete",
 
 
 
