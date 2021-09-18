@@ -14,7 +14,7 @@ import { ApiResponse } from "./apiresponse";
 })
 export class AuthService {
   //loginurl = 'http://42.192.80.206:8083/login';
-  loginurl='http://localhost:8083/login';
+  loginurl='http://114.115.138.42:30004/login';
   constructor(private http: HttpClient) { }
   authUser(auth: Auth): Observable<ApiResponse> {
     return this.http.post<ApiResponse>(this.loginurl, auth).pipe(
