@@ -7,21 +7,25 @@ import {HttpClientModule} from "@angular/common/http";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { RbboardComponent } from './dashboard/dlrb/rbboard/rbboard.component';
+import { LoginV2Component } from './login-v2/login-v2.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    RbboardComponent
+    RbboardComponent,
+    LoginV2Component
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: 'dashboard', component: DashboardComponent},
-      {path: '', component: LoginComponent},
-      {path: 'login', component: LoginComponent},
+      {path: '', component: LoginV2Component},
+      {path: 'login', component: LoginV2Component},
       { path: 'rb', component: RbboardComponent },
 
     ]),
