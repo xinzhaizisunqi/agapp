@@ -10,7 +10,7 @@
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Bill System</title>
-    
+
 
 
 
@@ -102,9 +102,10 @@
                                 </form>
                                 <p class="text-center mt-2"><span>New on our platform?</span><a href="page-auth-register-v2.html"><span>&nbsp;Create an account</span></a></p>
                                 <div class="divider my-2">
-                                    <div class="divider-text">or</div>
+                                  <div  *ngIf= "error" class="alert alert-danger" role="alert">账号密码错误</div>
+
                                 </div>
-                                <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook" href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white" href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i data-feather="mail"></i></a><a class="btn btn-github" href="#"><i data-feather="github"></i></a></div>
+
                             </div>
                         </div>
                         <!-- /Login-->
